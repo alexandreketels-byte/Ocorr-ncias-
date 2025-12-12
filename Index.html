@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Ocorrências</title>
+    <style>
+        body { 
+            font-family: Arial; 
+            display: flex; 
+            gap: 20px; 
+            padding: 20px;
+            background: #f7f7f7;
+        }
+
+        .coluna {
+            width: 300px;
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            min-height: 400px;
+        }
+
+        .coluna h3 {
+            margin-top: 0;
+            text-align: center;
+            background: #ddd;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            cursor: grab;
+            border-left: 5px solid #5b8dfd;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        #formOcorrencia {
+            width: 300px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #4285f4;
+            border: none;
+            color: white;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #336ad1;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="formOcorrencia">
+    <h3>Nova Ocorrência</h3>
+
+    <input id="pedido" placeholder="Pedido" /><br><br>
+    <input id="cliente" placeholder="Cliente" /><br><br>
+
+    <select id="tipo">
+        <option>Atraso</option>
+        <option>Cliente ausente</option>
+        <option>Endereço errado</option>
+        <option>Item faltando</option>
+        <option>Avaria</option>
+    </select><br><br>
+
+    <select id="transportadora">
+        <option>Jamef</option>
+        <option>Braspress</option>
+        <option>Patrus</option>
+        <option>Correios</option>
+        <option>Total Express</option>
+    </select><br><br>
+
+    <textarea id="descricao" placeholder="Detalhes"></textarea><br><br>
+
+    <button onclick="criarOcorrencia()">Cadastrar</button>
+</div>
+
+
+<div class="coluna" ondrop="drop(event)" ondragover="allowDrop(event)" id="nova">
+    <h3>Nova</h3>
+</div>
+
+<div class="coluna" ondrop="drop(event)" ondragover="allowDrop(event)" id="analise">
+    <h3>Em análise</h3>
+</div>
+
+<div class="coluna" ondrop="drop(event)" ondragover="allowDrop(event)" id="transportadoraCol">
+    <h3>Transportadora</h3>
+</div>
+
+<div class="coluna" ondrop="drop(event)" ondragover="allowDrop(event)" id="finalizado">
+    <h3>Finalizado</h3>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
